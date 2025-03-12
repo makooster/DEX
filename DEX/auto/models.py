@@ -7,8 +7,8 @@ User = get_user_model()
 class Auto(models.Model):
     brand = models.CharField(max_length=50)  
     model = models.CharField(max_length=50) 
-    year = models.PositiveIntegerField()  
-    mileage = models.PositiveIntegerField()  # km or miles
+    year = models.PositiveIntegerField(default=2025)  
+    mileage = models.PositiveIntegerField(default=1000)  # km or miles
     fuel_type = models.CharField(max_length=20, choices=[("petrol", "Petrol"), ("diesel", "Diesel"), ("electric", "Electric")])
     transmission = models.CharField(max_length=20, choices=[("manual", "Manual"), ("automatic", "Automatic")])
     body_type = models.CharField(max_length=30, choices=[("sedan", "Sedan"), ("SUV", "SUV"), ("hatchback", "Hatchback")])
