@@ -16,6 +16,8 @@ class AdvertisementViewSet(viewsets.ModelViewSet):
         'auto__model',         
         'auto__year',
         ]
+    ordering_fields = ['created_at','updated_at'] # Сортировка по времени
+    ordering = ['-created_at'] # По умолчанию новые объявления первыми
     
     def perform_create(self, serializer):
         serializer.save(seller=self.request.user)  
